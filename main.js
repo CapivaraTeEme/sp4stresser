@@ -35,10 +35,15 @@ const ascii = [
 function gradientPrint(textArray) {
   const colors = [chalk.yellow, chalk.blue];
   textArray.forEach((line, i) => {
-    const color = colors[i % colors.length];
-    console.log(color(line));
+    const colorFn = colors[i % colors.length];
+    if (typeof colorFn === "function") {
+      console.log(colorFn(line));
+    } else {
+      console.log(line);
+    }
   });
 }
+
 
 function getTime() {
   return chalk.yellow(`[${new Date().toLocaleTimeString()}:sp4]`);
