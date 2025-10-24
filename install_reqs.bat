@@ -15,9 +15,10 @@ if %errorlevel% neq 0 (
 )
 
 echo Installing Requeriments
-npm install mineflayer chalk discord-rpc readline --save
+npm install mineflayer chalk@4 discord-rpc readline --save
 
 echo.
 echo Requeriments Installeds
 echo Now open start.bat
+
 pause
